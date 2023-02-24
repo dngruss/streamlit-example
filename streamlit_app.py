@@ -47,10 +47,11 @@ with st.echo(code_location='below'):
     import pandas as pd
     import numpy as np
     
-    total_points = st.slider("Number of data points", 1, 50, 15)
+    total_x = st.slider("Number of X data points", 1, 50, 15)
+    total_y = st.slider("Number of Y data points", 1, 50, 5)
 
     chart_data = pd.DataFrame(
-        np.random.randn(total_points, 3),
+        np.random.randn(total_x, total_y),
         columns=['a', 'b', 'c'])
 
     st.area_chart(chart_data)
