@@ -36,3 +36,11 @@ with st.echo(code_location='below'):
     st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500)
         .mark_circle(color='#0068c9', opacity=0.5)
         .encode(x='x:Q', y='y:Q'))
+
+   
+"""
+This is a new thing
+"""
+
+with st.echo(code_location='below'):
+    thinga = st.slider("Age", 1, 46, 100)
