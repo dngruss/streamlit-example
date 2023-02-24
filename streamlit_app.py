@@ -43,4 +43,4 @@ This is a new thing
 """
 
 with st.echo(code_location='below'):
-    thinga = st.slider("Age", 1, 46, 100)
+    thinga = st.slider("Age", 1, 100, 46)
