@@ -48,7 +48,7 @@ with st.echo(code_location='below'):
     import numpy as np
     
     total_x = st.slider("Number of X data points", 1, 50, 15)
-    total_y = st.slider("Number of Y data points", 1, 50, 5)
+    total_y = st.slider("Number of Y data points", 1, 3, 2)
 
     chart_data = pd.DataFrame(
         np.random.randn(total_x, total_y),
