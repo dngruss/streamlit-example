@@ -46,9 +46,11 @@ with st.echo(code_location='below'):
     import streamlit as st
     import pandas as pd
     import numpy as np
+    
+    total_points = st.slider("Number of data points", 1, 50, 15)
 
     chart_data = pd.DataFrame(
-        np.random.randn(20, 3),
+        np.random.randn(total_points, 3),
         columns=['a', 'b', 'c'])
 
     st.area_chart(chart_data)
