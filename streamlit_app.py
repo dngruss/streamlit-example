@@ -51,7 +51,7 @@ with st.echo(code_location='below'):
     total_y = st.slider("Number of Y data points", 1, 3, 2)
 
     chart_data = pd.DataFrame(
-        np.random.randn(total_x, total_y),
+        np.random.randn(total_x, 3),
         columns=['a', 'b', 'c'])
 
     st.area_chart(chart_data)
