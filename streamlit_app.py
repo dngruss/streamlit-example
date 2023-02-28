@@ -39,7 +39,7 @@ with st.echo(code_location='below'):
 
    
 """
-This is a new thing
+This is a new thing I'm showing Keisuke
 """
 
 with st.echo(code_location='below'):
@@ -47,7 +47,7 @@ with st.echo(code_location='below'):
     import pandas as pd
     import numpy as np
     
-    total_x = st.slider("Number of X data points", 1, 50, 15)
+    total_x = st.slider("Number of X data points", 1, 75, 25)
     total_y = st.slider("Number of Y data points", 1, 3, 2)
 
     chart_data = pd.DataFrame(
