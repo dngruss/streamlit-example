@@ -6,9 +6,12 @@ on:
   workflow_dispatch:
     inputs:
       name:
-        description: 'Name of Approver'
+        type: choice
+        description: Who is approving?
+        options: 
+        - Alexandros
+        - Wade
         required: true
-        type: string
       deployment_key:
         description: 'Approval Key'
         required: true
