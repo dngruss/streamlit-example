@@ -19,6 +19,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: list keys
+      run: echo env key = env.deployment_key | echo input key = inputs.deployment_key
     - name: check for approval
       if: ${{ env.deployment_key != inputs.deployment_key }}
-      run: echo "Approval failed!" && exit 1
+      run: echo "Approval failed!" | exit 1
