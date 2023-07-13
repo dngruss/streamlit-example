@@ -26,6 +26,6 @@ jobs:
     steps:
     - name: checking for approval
       if: ${{ env.ENV_DEPLOYMENT_KEY != inputs.deployment_key }}
-      run: echo "Deployment approval failed for user ${{ inputs.name }}!" | exit 1
+      run: echo "Deployment approval failed for user ${{ inputs.name }}!" && exit 1
     - name: log approval success
       run: echo "User ${{ inputs.name }} successfully approved the deployment!"
