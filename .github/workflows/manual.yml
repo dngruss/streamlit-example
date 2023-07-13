@@ -24,8 +24,8 @@ jobs:
         ENV_DEPLOYMENT_KEY: ${{ secrets.DEPLOYMENT_KEY }}
         
     steps:
-    - name: list keys
-      run: echo "ENV key = $ENV_DEPLOYMENT_KEY" && echo "INPUT key = ${{ inputs.deployment_key }}"
-    - name: check for approval
+    - name: checking for approval
       if: ${{ env.ENV_DEPLOYMENT_KEY != inputs.deployment_key }}
-      run: echo "Approval failed!" | exit 1
+      run: echo "Deployment approval failed!" | exit 1
+    - name: log approval success
+      run: echo "User ${{ inputs.name }} successfully approved the deployment!"
