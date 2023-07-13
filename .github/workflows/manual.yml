@@ -21,10 +21,10 @@ jobs:
     steps:
     - name: list keys
       env:
-        ENV_DEPLOYMENT_KEY: ${{ secrets.SuperSecret }}
+        ENV_DEPLOYMENT_KEY: ${{ secrets.deployment_key }}
       run: echo "ENV key = $ENV_DEPLOYMENT_KEY" && echo "INPUT key = ${{ inputs.deployment_key }}"
     - name: check for approval
       env:
-        ENV_DEPLOYMENT_KEY: ${{ secrets.SuperSecret }}
-      if: ${{ secrets.deployment_key != inputs.deployment_key }}
+        ENV_DEPLOYMENT_KEY: ${{ secrets.deployment_key }}
+      if: ${{ env.ENV_DEPLOYMENT_KEY != inputs.deployment_key }}
       run: echo "Approval failed!" | exit 1
