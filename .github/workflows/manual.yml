@@ -21,8 +21,8 @@ jobs:
     steps:
     - name: list keys
       env:
-        ENV_DEPLOYMENT_KEY: ${{ secrets.deployment_key }}
-      run: echo "ENV key = $ENV_DEPLOYMENT_KEY" && echo "INPUT key = ${{ inputs.deployment_key }}"
+        DEPLOYMENT_KEY: ${{ secrets.deployment_key }}
+      run: echo "ENV key = $env:DEPLOYMENT_KEY" && echo "INPUT key = ${{ inputs.deployment_key }}"
     - name: check for approval
       env:
         ENV_DEPLOYMENT_KEY: ${{ secrets.deployment_key }}
