@@ -17,14 +17,15 @@ on:
 jobs:
   demo:
     runs-on: ubuntu-latest
+    
+    environment: Test
 
+    env:
+        ENV_DEPLOYMENT_KEY: ${{ secrets.DEPLOYMENT_KEY }}
+        
     steps:
     - name: list keys
-      env:
-        ENV_DEPLOYMENT_KEY: ${{ secrets.DEPLOYMENT_KEY }}
       run: echo "ENV key = $ENV_DEPLOYMENT_KEY" && echo "INPUT key = ${{ inputs.deployment_key }}"
     - name: check for approval
-      env:
-        ENV_DEPLOYMENT_KEY: ${{ secrets.DEPLOYMENT_KEY }}
       if: ${{ env.ENV_DEPLOYMENT_KEY != inputs.deployment_key }}
       run: echo "Approval failed!" | exit 1
